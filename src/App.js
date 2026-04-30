@@ -4,12 +4,15 @@ import { AppProvider, useAppContext } from './context/AppContext';
 import AdminLayout from './layouts/AdminLayout';
 import MemberLayout from './layouts/MemberLayout';
 import AdminDashboardPage from './pages/admin/AdminDashboardPage';
+import ClaimsPage from './pages/admin/ClaimsPage';
 import MembersPage from './pages/admin/MembersPage';
 import StaffPage from './pages/admin/StaffPage';
 import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
+import ClaimPage from './pages/member/ClaimPage';
 import IdentityPage from './pages/member/IdentityPage';
 import MemberDashboardPage from './pages/member/MemberDashboardPage';
+import TransferMilesPage from './pages/member/TransferMilesPage';
 
 function AppRoutes() {
   const { toasts, removeToast } = useAppContext();
@@ -24,11 +27,14 @@ function AppRoutes() {
 
           <Route element={<MemberLayout />}>
             <Route path="/member/dashboard" element={<MemberDashboardPage />} />
+            <Route path="/member/claim" element={<ClaimPage />} />
             <Route path="/member/identity" element={<IdentityPage />} />
+            <Route path="/member/transfer" element={<TransferMilesPage />} />
           </Route>
 
           <Route element={<AdminLayout />}>
             <Route path="/admin/dashboard" element={<AdminDashboardPage />} />
+            <Route path="/admin/claims" element={<ClaimsPage />} />
             <Route path="/admin/members" element={<MembersPage />} />
             <Route path="/admin/staff" element={<StaffPage />} />
           </Route>
