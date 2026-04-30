@@ -6,12 +6,16 @@ import MemberLayout from './layouts/MemberLayout';
 import AdminDashboardPage from './pages/admin/AdminDashboardPage';
 import ClaimsPage from './pages/admin/ClaimsPage';
 import MembersPage from './pages/admin/MembersPage';
+import ReportsPage from './pages/admin/ReportsPage';
 import StaffPage from './pages/admin/StaffPage';
+import TransactionsPage from './pages/admin/TransactionsPage';
 import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
+import BuyMilesPage from './pages/member/BuyMilesPage';
 import ClaimPage from './pages/member/ClaimPage';
 import IdentityPage from './pages/member/IdentityPage';
 import MemberDashboardPage from './pages/member/MemberDashboardPage';
+import RewardsPage from './pages/member/RewardsPage';
 import TransferMilesPage from './pages/member/TransferMilesPage';
 
 function AppRoutes() {
@@ -26,9 +30,11 @@ function AppRoutes() {
           <Route path="/login" element={<LoginPage />} />
 
           <Route element={<MemberLayout />}>
+            <Route path="/member/buy-miles" element={<BuyMilesPage />} />
             <Route path="/member/dashboard" element={<MemberDashboardPage />} />
             <Route path="/member/claim" element={<ClaimPage />} />
             <Route path="/member/identity" element={<IdentityPage />} />
+            <Route path="/member/rewards" element={<RewardsPage />} />
             <Route path="/member/transfer" element={<TransferMilesPage />} />
           </Route>
 
@@ -36,7 +42,9 @@ function AppRoutes() {
             <Route path="/admin/dashboard" element={<AdminDashboardPage />} />
             <Route path="/admin/claims" element={<ClaimsPage />} />
             <Route path="/admin/members" element={<MembersPage />} />
+            <Route path="/admin/reports" element={<ReportsPage />} />
             <Route path="/admin/staff" element={<StaffPage />} />
+            <Route path="/admin/transactions" element={<TransactionsPage />} />
           </Route>
 
           <Route path="*" element={<Navigate to="/" replace />} />
